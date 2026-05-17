@@ -14,3 +14,4 @@ This plugin library includes the following plugins:
 | [case](./case) | Case Conversion |
 | [special-characters](./special-characters) | Special Character Selection |
 | [menstrual-history](./menstrual-history) | Menstrual History Record |
+| [markdown](./markdown) | Markdown Import/Export |

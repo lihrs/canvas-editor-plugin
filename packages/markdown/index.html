@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>canvas-editor-plugin-markdown</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    #app {
+      display: flex;
+      height: 100vh;
+    }
+
+    #left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #e0e0e0;
+    }
+
+    #left-label {
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      border-bottom: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+
+    #markdown-input {
+      flex: 1;
+      resize: none;
+      border: none;
+      padding: 12px;
+      font-size: 14px;
+      font-family: 'Courier New', monospace;
+      outline: none;
+    }
+
+    #middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      background: #fafafa;
+      gap: 12px;
+    }
+
+    #middle button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      background: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      transition: all 0.2s;
+    }
+
+    #middle button:hover {
+      background: #1890ff;
+      color: #fff;
+      border-color: #1890ff;
+    }
+
+    #right {
+      flex: 1;
+      overflow: auto;
+    }
+
+    #right-label {
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      border-bottom: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div id="left">
+      <div id="left-label">Markdown</div>
+      <textarea id="markdown-input" placeholder="输入 Markdown 内容..."># Hello World
+
+## 示例
+
+这是一段**加粗**和*斜体*文本。
+
+- 列表项 1
+- 列表项 2
+- 列表项 3
+
+> 这是一段引用</textarea>
+    </div>
+    <div id="middle">
+      <button id="btn-to-editor" title="Markdown → 编辑器">&#8594;</button>
+      <button id="btn-to-markdown" title="编辑器 → Markdown">&#8592;</button>
+    </div>
+    <div id="right">
+      <div id="right-label">编辑器预览</div>
+      <div id="editor"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

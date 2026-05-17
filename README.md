@@ -152,3 +152,21 @@ command.executeLoadMenstrualHistory({
   onCancel?: () => void
 })
 ```
+
+- @hufe921/canvas-editor-plugin-markdown
+
+```javascript
+import Editor from '@hufe921/canvas-editor'
+import markdownPlugin from '@hufe921/canvas-editor-plugin-markdown'
+
+const instance = new Editor()
+instance.use(markdownPlugin)
+
+// export markdown
+const markdown = instance.command.executeExportMarkdown()
+
+// import markdown
+instance.command.executeImportMarkdown({
+  value: '# Hello World\n\nThis is a **bold** text.'
+})
+```
